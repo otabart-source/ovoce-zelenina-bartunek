@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ovoce a Zelenina Pardubice – Čerstvé a lokální každý den</title>
+  <meta name="description" content="Lokální obchod s čerstvým ovocem a zeleninou. Každodenní naskladnění od místních pěstitelů. Jana Palacha 1451, Pardubice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================
+       HEADER / NAVIGACE
+       ======================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="Ovoce a Zelenina Pardubice – domovská stránka">
+        <span class="logo__leaf" aria-hidden="true">🌿</span>
+        <span class="logo__text">
+          <span class="logo__name">Ovoce a Zelenina</span>
+          <span class="logo__location">Pardubice</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Hlavní navigace">
+        <ul class="nav__list" role="list">
+          <li><a href="#o-nas"    class="nav__link">O nás</a></li>
+          <li><a href="#nabidka"  class="nav__link">Nabídka</a></li>
+          <li><a href="#recepty"  class="nav__link">Recepty</a></li>
+          <li><a href="#firmy"    class="nav__link">Pro firmy</a></li>
+          <li><a href="#kontakt"  class="nav__link nav__link--highlight">Kde nás najdete</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Otevřít navigační menu" aria-expanded="false" aria-controls="nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========================
+         HERO SEKCE
+         ======================== -->
+    <section class="hero" id="hero" aria-label="Úvodní sekce">
+      <div class="container hero__container">
+
+        <!-- Text část -->
+        <div class="hero__content">
+          <div class="hero__badge" aria-hidden="true">
+            <span class="hero__badge-dot"></span>
+            Vždy čerstvé a kvalitní potraviny
+          </div>
+
+          <h1 class="hero__title">
+            Čerstvé a kvalitní potraviny<br>
+            <em class="hero__title-accent">přímo na váš stůl</em>
+          </h1>
+
+          <p class="hero__subtitle">
+            Vybíráme pro vás to nejlepší – od lokálních farmářů, pekařů i prověřených dodavatelů z dalších koutů světa.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#nabidka" class="btn btn--primary btn--lg">
+              <span>Prohlédnout nabídku</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#kontakt" class="btn btn--outline btn--lg">Kde nás najdete</a>
+          </div>
+
+          <div class="hero__stats" aria-label="Klíčové statistiky">
+            <div class="hero__stat">
+              <strong>10+</strong>
+              <span>lokálních dodavatelů</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <strong>200+</strong>
+              <span>druhů zboží</span>
+            </div>
+            <div class="hero__stat-divider" aria-hidden="true"></div>
+            <div class="hero__stat">
+              <strong>každý den</strong>
+              <span>čerstvé zásoby</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vizuální koláž produktů -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__visual-grid">
+            <div class="hero__product-card hero__product-card--1">
+              <span class="hero__product-emoji">🍅</span>
+              <span class="hero__product-name">Rajčata</span>
+              <span class="hero__product-price">49 Kč/kg</span>
+            </div>
+            <div class="hero__product-card hero__product-card--2">
+              <span class="hero__product-emoji">🥦</span>
+              <span class="hero__product-name">Brokolice</span>
+              <span class="hero__product-price">39 Kč/ks</span>
+            </div>
+            <div class="hero__product-card hero__product-card--3">
+              <span class="hero__product-emoji">🍓</span>
+              <span class="hero__product-name">Jahody</span>
+              <span class="hero__product-price">59 Kč/500g</span>
+            </div>
+            <div class="hero__product-card hero__product-card--4">
+              <span class="hero__product-emoji">🍋</span>
+              <span class="hero__product-name">Citron</span>
+              <span class="hero__product-price">18 Kč/ks</span>
+            </div>
+            <div class="hero__product-card hero__product-card--5">
+              <span class="hero__product-emoji">🥕</span>
+              <span class="hero__product-name">Mrkev</span>
+              <span class="hero__product-price">22 Kč/kg</span>
+            </div>
+            <div class="hero__product-card hero__product-card--6">
+              <span class="hero__product-emoji">🌿</span>
+              <span class="hero__product-name">Bazalka</span>
+              <span class="hero__product-price">25 Kč</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dekorativní pozadí prvky -->
+      <div class="hero__bg-decor" aria-hidden="true">
+        <div class="hero__bg-blob hero__bg-blob--1"></div>
+        <div class="hero__bg-blob hero__bg-blob--2"></div>
+      </div>
+    </section>
+
+    <!-- ========================
+         PARTNEŘI – SCROLLING LIŠTA
+         ======================== -->
+    <section class="partners" aria-label="Naši partneři">
+      <div class="partners__label">Spolupracují s námi</div>
+      <div class="partners__marquee">
+        <div class="partners__track">
+
+          <!-- ① Farma Novák – list + dvouřádkový název -->
+          <div class="partner-logo">
+            <svg width="130" height="44" viewBox="0 0 130 44" aria-label="Farma Novák">
+              <path d="M14 26 C14 14 24 7 33 10 C30 19 22 26 14 26Z" fill="white"/>
+              <path d="M14 26 C21 26 28 33 27 41 C20 39 13 33 14 26Z" fill="white" opacity="0.5"/>
+              <text x="42" y="19" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1.5">FARMA</text>
+              <text x="42" y="34" font-family="Inter,sans-serif" font-size="12" font-weight="400" fill="white" opacity="0.75" letter-spacing="1.5">NOVÁK</text>
+            </svg>
+          </div>
+
+          <!-- ② BioMart – kruhový monogram -->
+          <div class="partner-logo">
+            <svg width="130" height="44" viewBox="0 0 130 44" aria-label="BioMart">
+              <circle cx="22" cy="22" r="17" fill="none" stroke="white" stroke-width="2"/>
+              <text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="white">BM</text>
+              <text x="48" y="19" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="1">BIOMART</text>
+              <text x="48" y="33" font-family="Inter,sans-serif" font-size="9" font-weight="400" fill="white" opacity="0.6" letter-spacing="2.5">ČERSTVÉ</text>
+            </svg>
+          </div>
+
+          <!-- ③ Zelená Hora – trojúhelník/hora -->
+          <div class="partner-logo">
+            <svg width="135" height="44" viewBox="0 0 135 44" aria-label="Zelená Hora">
+              <polygon points="22,5 38,39 6,39" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <polygon points="22,16 33,39 11,39" fill="white" opacity="0.25"/>
+              <text x="48" y="20" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1">ZELENÁ</text>
+              <text x="48" y="35" font-family="Inter,sans-serif" font-size="12" font-weight="400" fill="white" opacity="0.75" letter-spacing="1">HORA</text>
+            </svg>
+          </div>
+
+          <!-- ④ Fresh Market – sluníčko s paprsky -->
+          <div class="partner-logo">
+            <svg width="140" height="44" viewBox="0 0 140 44" aria-label="Fresh Market">
+              <circle cx="22" cy="22" r="9" fill="white"/>
+              <line x1="22" y1="4"  x2="22" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="22" y1="34" x2="22" y2="40" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4"  y1="22" x2="10" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="34" y1="22" x2="40" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9"  y1="9"  x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="30" y1="30" x2="35" y2="35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="35" y1="9"  x2="30" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9"  y1="35" x2="14" y2="30" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <text x="50" y="20" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="1">FRESH</text>
+              <text x="50" y="34" font-family="Inter,sans-serif" font-size="9"  font-weight="400" fill="white" opacity="0.65" letter-spacing="3">MARKET</text>
+            </svg>
+          </div>
+
+          <!-- ⑤ Lokální Sad – šestiúhelník + iniciály -->
+          <div class="partner-logo">
+            <svg width="135" height="44" viewBox="0 0 135 44" aria-label="Lokální Sad">
+              <polygon points="22,3 37,12 37,30 22,39 7,30 7,12" fill="none" stroke="white" stroke-width="2"/>
+              <polygon points="22,11 31,16 31,26 22,31 13,26 13,16" fill="white" opacity="0.15"/>
+              <text x="22" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="white">LS</text>
+              <text x="47" y="20" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1">LOKÁLNÍ</text>
+              <text x="47" y="34" font-family="Inter,sans-serif" font-size="12" font-weight="400" fill="white" opacity="0.75" letter-spacing="1">SAD</text>
+            </svg>
+          </div>
+
+          <!-- Duplicát pro bezešvé opakování -->
+          <div class="partner-logo" aria-hidden="true">
+            <svg width="130" height="44" viewBox="0 0 130 44">
+              <path d="M14 26 C14 14 24 7 33 10 C30 19 22 26 14 26Z" fill="white"/>
+              <path d="M14 26 C21 26 28 33 27 41 C20 39 13 33 14 26Z" fill="white" opacity="0.5"/>
+              <text x="42" y="19" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1.5">FARMA</text>
+              <text x="42" y="34" font-family="Inter,sans-serif" font-size="12" font-weight="400" fill="white" opacity="0.75" letter-spacing="1.5">NOVÁK</text>
+            </svg>
+          </div>
+          <div class="partner-logo" aria-hidden="true">
+            <svg width="130" height="44" viewBox="0 0 130 44">
+              <circle cx="22" cy="22" r="17" fill="none" stroke="white" stroke-width="2"/>
+              <text x="22" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="white">BM</text>
+              <text x="48" y="19" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="1">BIOMART</text>
+              <text x="48" y="33" font-family="Inter,sans-serif" font-size="9" font-weight="400" fill="white" opacity="0.6" letter-spacing="2.5">ČERSTVÉ</text>
+            </svg>
+          </div>
+          <div class="partner-logo" aria-hidden="true">
+            <svg width="135" height="44" viewBox="0 0 135 44">
+              <polygon points="22,5 38,39 6,39" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+              <polygon points="22,16 33,39 11,39" fill="white" opacity="0.25"/>
+              <text x="48" y="20" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1">ZELENÁ</text>
+              <text x="48" y="35" font-family="Inter,sans-serif" font-size="12" font-weight="400" fill="white" opacity="0.75" letter-spacing="1">HORA</text>
+            </svg>
+          </div>
+          <div class="partner-logo" aria-hidden="true">
+            <svg width="140" height="44" viewBox="0 0 140 44">
+              <circle cx="22" cy="22" r="9" fill="white"/>
+              <line x1="22" y1="4"  x2="22" y2="10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="22" y1="34" x2="22" y2="40" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="4"  y1="22" x2="10" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="34" y1="22" x2="40" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9"  y1="9"  x2="14" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="30" y1="30" x2="35" y2="35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="35" y1="9"  x2="30" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <line x1="9"  y1="35" x2="14" y2="30" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <text x="50" y="20" font-family="Inter,sans-serif" font-size="13" font-weight="700" fill="white" letter-spacing="1">FRESH</text>
+              <text x="50" y="34" font-family="Inter,sans-serif" font-size="9"  font-weight="400" fill="white" opacity="0.65" letter-spacing="3">MARKET</text>
+            </svg>
+          </div>
+          <div class="partner-logo" aria-hidden="true">
+            <svg width="135" height="44" viewBox="0 0 135 44">
+              <polygon points="22,3 37,12 37,30 22,39 7,30 7,12" fill="none" stroke="white" stroke-width="2"/>
+              <polygon points="22,11 31,16 31,26 22,31 13,26 13,16" fill="white" opacity="0.15"/>
+              <text x="22" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="800" fill="white">LS</text>
+              <text x="47" y="20" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1">LOKÁLNÍ</text>
+              <text x="47" y="34" font-family="Inter,sans-serif" font-size="12" font-weight="400" fill="white" opacity="0.75" letter-spacing="1">SAD</text>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         O NÁS
+         ======================== -->
+    <section class="about" id="o-nas">
+      <div class="container">
+        <div class="about__inner">
+
+          <div class="about__text" data-animate>
+            <div class="section-label">Náš příběh</div>
+            <h2 class="section-title">Jsme sousedé,<br>ne supermarket</h2>
+            <p class="about__lead">
+              Náš obchod vznikl z jednoduché myšlenky – přinést lidem v Pardubicích opravdu čerstvou zeleninu a ovoce.
+            </p>
+            <p class="about__body-text">
+              U nás najdete čerstvé ovoce, zeleninu i další kvalitní potraviny – část od lokálních dodavatelů, část z pečlivě vybraných zdrojů ze zahraničí. K tomu si u nás můžete vzít i pečivo a mléčné výrobky od místních farmářů a pekařství.
+            </p>
+            <p class="about__body-text">
+              Přijďte se podívat, poradit se nebo jen tak popovídat. Rádi vám pomůžeme s výběrem a prozradíme, co je zrovna nejlepší.
+            </p>
+          </div>
+
+          <div class="about__benefits" data-animate>
+            <div class="benefit-card">
+              <div class="benefit-card__icon" aria-hidden="true">🌅</div>
+              <div class="benefit-card__body">
+                <h3>Každý den čerstvé</h3>
+                <p>Zboží naskladňujeme každé ráno. Co nevypadá perfektně, to u nás neuvidíte.</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-card__icon" aria-hidden="true">🤝</div>
+              <div class="benefit-card__body">
+                <h3>Lokální dodavatelé</h3>
+                <p>Spolupracujeme výhradně s ověřenými pěstiteli z okolí. Víme, odkud naše zboží pochází.</p>
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-card__icon" aria-hidden="true">💬</div>
+              <div class="benefit-card__body">
+                <h3>Osobní přístup</h3>
+                <p>Nejsme anonymní síť. Pamatujeme si, co rádi jíte, a vždy rádi poradíme.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         NAŠE NABÍDKA
+         ======================== -->
+    <section class="offer" id="nabidka">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <div class="section-label">Co nabízíme</div>
+          <h2 class="section-title">Vše, co potřebujete<br>pro dobré vaření</h2>
+          <p class="section-subtitle">Od základní zeleniny přes exotické ovoce až po čerstvé bylinky a lokální speciality.</p>
+        </div>
+
+        <div class="offer__grid">
+
+          <div class="offer-card" data-animate>
+            <div class="offer-card__visual offer-card__visual--fruits">
+              <span class="offer-card__emoji" aria-hidden="true">🍎</span>
+            </div>
+            <div class="offer-card__body">
+              <h3>Čerstvé ovoce</h3>
+              <p>Jablka, hrušky, citrusy, tropické ovoce. Zralé a plné chuti, naskladněné každé ráno.</p>
+            </div>
+          </div>
+
+          <div class="offer-card" data-animate>
+            <div class="offer-card__visual offer-card__visual--veggies">
+              <span class="offer-card__emoji" aria-hidden="true">🥦</span>
+            </div>
+            <div class="offer-card__body">
+              <h3>Čerstvá zelenina</h3>
+              <p>Rajčata, papriky, cukety, brambory a desítky dalších druhů. Přímý odběr od pěstitelů.</p>
+            </div>
+          </div>
+
+          <div class="offer-card" data-animate>
+            <div class="offer-card__visual offer-card__visual--herbs">
+              <span class="offer-card__emoji" aria-hidden="true">🌿</span>
+            </div>
+            <div class="offer-card__body">
+              <h3>Čerstvé bylinky</h3>
+              <p>Bazalka, petržel, koriandr, máta a další. Voňavé a živé, přesně takové, jaké do vaření patří.</p>
+            </div>
+          </div>
+
+          <div class="offer-card" data-animate>
+            <div class="offer-card__visual offer-card__visual--seasonal">
+              <span class="offer-card__emoji" aria-hidden="true">🌸</span>
+            </div>
+            <div class="offer-card__body">
+              <h3>Sezónní speciality</h3>
+              <p>Sledujeme sezónu a doplňujeme nabídku tím, co právě dozrálo. Jahody, chřest, dýně, lesní houby…</p>
+            </div>
+          </div>
+
+          <div class="offer-card" data-animate>
+            <div class="offer-card__visual offer-card__visual--local">
+              <span class="offer-card__emoji" aria-hidden="true">🏡</span>
+            </div>
+            <div class="offer-card__body">
+              <h3>Lokální produkty</h3>
+              <p>Med, džemy, nakládaná zelenina a produkty od místních výrobců. Chuť, za kterou stojí příběh.</p>
+            </div>
+          </div>
+
+          <div class="offer-card offer-card--cta" data-animate>
+            <div class="offer-card__cta-inner">
+              <span class="offer-card__cta-emoji" aria-hidden="true">🛒</span>
+              <h3>Přijďte se podívat</h3>
+              <p>Nabídka se mění každý den. Nejlepší je přijít a přesvědčit se osobně.</p>
+              <a href="#kontakt" class="btn btn--primary btn--sm">Kde nás najdete</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+ 
+
+    <!-- ========================
+         RECEPTY
+         ======================== -->
+    <section class="recipes" id="recepty">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <div class="section-label">Inspirace z kuchyně</div>
+          <h2 class="section-title">Recepty, které zvládne<br>každý</h2>
+          <p class="section-subtitle">Jednoduché, chutné recepty z čerstvých surovin. Vše, co potřebujete, máme u nás v obchodě.</p>
+        </div>
+
+        <div class="recipes__grid">
+
+          <!-- Recept 1 -->
+          <article class="recipe-card" data-animate>
+            <div class="recipe-card__header">
+              <div class="recipe-card__emoji-wrap" aria-hidden="true">🥗</div>
+              <div class="recipe-card__meta">
+                <span class="recipe-card__meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  15 minut
+                </span>
+                <span class="recipe-card__meta-item recipe-card__meta-item--diff">Snadné</span>
+              </div>
+            </div>
+            <div class="recipe-card__body">
+              <h3 class="recipe-card__title">Letní salát s rajčaty a mozzarellou</h3>
+              <p class="recipe-card__desc">Klasický caprese v moderním podání. Svěží, sytý a hotový za čtvrt hodiny. Ideální jako rychlý oběd nebo příloha k večeři.</p>
+
+              <div class="recipe-card__section">
+                <h4>Ingredience <small>(2 porce)</small></h4>
+                <ul class="recipe-ingredients">
+                  <li>3–4 velká rajčata</li>
+                  <li>1 kulička čerstvé mozzarelly</li>
+                  <li>hrst čerstvé bazalky</li>
+                  <li>2 lžíce olivového oleje</li>
+                  <li>balzamikový ocet, sůl, pepř</li>
+                </ul>
+              </div>
+
+              <div class="recipe-card__section">
+                <h4>Postup</h4>
+                <p class="recipe-card__steps">Rajčata nakrájejte na plátky, stejně tak mozzarellu. Střídavě pokládejte na talíř a prokládejte lístky bazalky. Zalijte olivovým olejem, pokapejte balzamikem, osolte a opepřete.</p>
+              </div>
+
+              <div class="recipe-card__shop">
+                <div class="recipe-card__shop-header">
+                  <span aria-hidden="true">🛒</span>
+                  <strong>Nakoupíte u nás</strong>
+                </div>
+                <ul class="recipe-shop-list">
+                  <li><span>Rajčata</span><span class="shop-price">49 Kč / kg</span></li>
+                  <li><span>Čerstvá bazalka</span><span class="shop-price">25 Kč</span></li>
+                  <li><span>Čerstvá bazalka</span><span class="shop-price">25 Kč</span></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recept 2 -->
+          <article class="recipe-card" data-animate>
+            <div class="recipe-card__header">
+              <div class="recipe-card__emoji-wrap" aria-hidden="true">🍲</div>
+              <div class="recipe-card__meta">
+                <span class="recipe-card__meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  30 minut
+                </span>
+                <span class="recipe-card__meta-item recipe-card__meta-item--diff">Snadné</span>
+              </div>
+            </div>
+            <div class="recipe-card__body">
+              <h3 class="recipe-card__title">Cuketová polévka s bazalkou</h3>
+              <p class="recipe-card__desc">Jemná krémová polévka, která zachutná i těm, kteří cuketu jinak příliš nemusí. Sytá, levná a hotová za půl hodiny.</p>
+
+              <div class="recipe-card__section">
+                <h4>Ingredience <small>(4 porce)</small></h4>
+                <ul class="recipe-ingredients">
+                  <li>2 střední cukety</li>
+                  <li>1 cibule, 2 stroužky česneku</li>
+                  <li>700 ml zeleninového vývaru</li>
+                  <li>200 ml smetany ke šlehání</li>
+                  <li>hrst čerstvé bazalky</li>
+                  <li>sůl, pepř, olivový olej</li>
+                </ul>
+              </div>
+
+              <div class="recipe-card__section">
+                <h4>Postup</h4>
+                <p class="recipe-card__steps">Na oleji osmažte cibuli a česnek dozlatova. Přidejte nakrájenou cuketu, podlijte vývarem a vařte 15 minut do měkka. Mixujte do hladka, přidejte smetanu a bazalku. Dochuťte a podávejte s čerstvým chlebem.</p>
+              </div>
+
+              <div class="recipe-card__shop">
+                <div class="recipe-card__shop-header">
+                  <span aria-hidden="true">🛒</span>
+                  <strong>Nakoupíte u nás</strong>
+                </div>
+                <ul class="recipe-shop-list">
+                  <li><span>Cuketa</span><span class="shop-price">32 Kč / ks</span></li>
+                  <li><span>Česnek</span><span class="shop-price">14 Kč / ks</span></li>
+                  <li><span>Čerstvá bazalka</span><span class="shop-price">25 Kč</span></li>
+                  <li><span>Cibule</span><span class="shop-price">12 Kč / kg</span></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Recept 3 -->
+          <article class="recipe-card" data-animate>
+            <div class="recipe-card__header">
+              <div class="recipe-card__emoji-wrap" aria-hidden="true">🍓</div>
+              <div class="recipe-card__meta">
+                <span class="recipe-card__meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  10 minut
+                </span>
+                <span class="recipe-card__meta-item recipe-card__meta-item--diff">Velmi snadné</span>
+              </div>
+            </div>
+            <div class="recipe-card__body">
+              <h3 class="recipe-card__title">Jahodový smoothie s mátou</h3>
+              <p class="recipe-card__desc">Osvěžující jarní smoothie ze čerstvých jahod, jogurtu a máty. Rychlá snídaně nebo odpolední mlsání bez výčitek.</p>
+
+              <div class="recipe-card__section">
+                <h4>Ingredience <small>(2 sklenice)</small></h4>
+                <ul class="recipe-ingredients">
+                  <li>300 g čerstvých jahod</li>
+                  <li>200 g bílého jogurtu</li>
+                  <li>několik lístků čerstvé máty</li>
+                  <li>1 lžíce medu nebo javorového sirupu</li>
+                  <li>šťáva z půlky citronu</li>
+                </ul>
+              </div>
+
+              <div class="recipe-card__section">
+                <h4>Postup</h4>
+                <p class="recipe-card__steps">Jahody omyjte a zbavte stopek. Vložte do mixéru spolu s jogurtem, mátou, medem a citronovou šťávou. Rozmixujte do hladka, v případě potřeby přidejte trochu vody nebo ledu. Podávejte ihned.</p>
+              </div>
+
+              <div class="recipe-card__shop">
+                <div class="recipe-card__shop-header">
+                  <span aria-hidden="true">🛒</span>
+                  <strong>Nakoupíte u nás</strong>
+                </div>
+                <ul class="recipe-shop-list">
+                  <li><span>Jahody</span><span class="shop-price">59 Kč / 500 g</span></li>
+                  <li><span>Čerstvá máta</span><span class="shop-price">22 Kč</span></li>
+                  <li><span>Bio citron</span><span class="shop-price">18 Kč / ks</span></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         PRO FIRMY – B2B
+         ======================== -->
+    <section class="business" id="firmy">
+      <div class="container">
+        <div class="business__inner">
+
+          <div class="business__content" data-animate>
+            <div class="section-label">Pro firmy a provozovny</div>
+            <h2 class="section-title">Zásobujeme kanceláře,<br>restaurace i kavárny</h2>
+            <p class="business__text">
+              Zajistíme vám pravidelné dodávky čerstvého ovoce a zeleniny přímo na pracoviště. Ať už provozujete restauraci, kavárnu, školu, nebo chcete dopřát svým zaměstnancům čerstvou svačinu – domluvíme se.
+            </p>
+
+            <ul class="business__benefits" role="list">
+              <li class="business__benefit">
+                <span class="business__benefit-icon" aria-hidden="true">📅</span>
+                <div>
+                  <strong>Pravidelné dodávky</strong>
+                  <p>Denní, týdenní nebo dle domluvy. Spolehlivě a vždy čerstvé.</p>
+                </div>
+              </li>
+              <li class="business__benefit">
+                <span class="business__benefit-icon" aria-hidden="true">✍️</span>
+                <div>
+                  <strong>Individuální domluva</strong>
+                  <p>Sestavíme nabídku přesně podle vašich potřeb a požadovaného množství.</p>
+                </div>
+              </li>
+              <li class="business__benefit">
+                <span class="business__benefit-icon" aria-hidden="true">🚚</span>
+                <div>
+                  <strong>Možnost rozvozu</strong>
+                  <p>V rámci okolí doručíme přímo k vám. Žádné starosti s nákupem.</p>
+                </div>
+              </li>
+              <li class="business__benefit">
+                <span class="business__benefit-icon" aria-hidden="true">🧾</span>
+                <div>
+                  <strong>Faktury a doklady</strong>
+                  <p>Vše doložíme potřebnými doklady pro vaše účetnictví.</p>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#kontakt" class="btn btn--primary">Napište nám</a>
+          </div>
+
+          <div class="business__visual" data-animate aria-hidden="true">
+            <div class="business__visual-inner">
+              <div class="business__stat-card">
+                <span class="business__stat-icon">🏪</span>
+                <strong>30+</strong>
+                <span>spokojených firemních klientů</span>
+              </div>
+              <div class="business__stat-card">
+                <span class="business__stat-icon">📦</span>
+                <strong>denně</strong>
+                <span>zásobujeme provozovny</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         KDE NÁS NAJDETE / KONTAKT
+         ======================== -->
+    <section class="contact" id="kontakt">
+      <div class="container">
+        <div class="section-header" data-animate>
+          <div class="section-label">Přijďte za námi</div>
+          <h2 class="section-title">Víme, kde nás najdete</h2>
+          <p class="section-subtitle">Stavte se osobně – rádi vám ukážeme, co máme dnes čerstvého.</p>
+        </div>
+
+        <div class="contact__inner">
+
+          <div class="contact__info" data-animate>
+            <div class="contact__block">
+              <h3 class="contact__block-title">
+                <span aria-hidden="true">📍</span> Adresa
+              </h3>
+              <address class="contact__address">
+                Ovoce a Zelenina Pardubice<br>
+                Jana Palacha 1451<br>
+                530 02 Pardubice
+              </address>
+            </div>
+
+            <div class="contact__block">
+              <h3 class="contact__block-title">
+                <span aria-hidden="true">🕐</span> Otevírací doba
+              </h3>
+              <table class="hours-table">
+                <tbody>
+                  <tr>
+                    <td>Pondělí – Pátek</td>
+                    <td><strong>8:00 – 17:30</strong></td>
+                  </tr>
+                  <tr>
+                    <td>Sobota</td>
+                    <td><strong>8:00 – 11:00</strong></td>
+                  </tr>
+                  <tr class="hours-table__closed">
+                    <td>Neděle</td>
+                    <td>zavřeno</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="contact__block">
+              <h3 class="contact__block-title">
+                <span aria-hidden="true">📞</span> Kontakt
+              </h3>
+              <p>
+                <a href="tel:+420777123456" class="contact__link">+420 777 123 456</a><br>
+                <a href="mailto:info@zelenykosik.cz" class="contact__link">info@zelenykosik.cz</a>
+              </p>
+            </div>
+
+            <div class="contact__note">
+              <span aria-hidden="true">🌿</span>
+              <p>Přijďte se podívat – jsme tu pro vás každý všední den od 8:00 a v sobotu dopoledne do 11:00.</p>
+            </div>
+          </div>
+
+          <div class="contact__map" data-animate>
+            <div class="map-wrap">
+              <iframe
+                src="https://maps.google.com/maps?q=50.0266398,15.7705821&z=17&output=embed"
+                width="100%"
+                height="380"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa – Ovoce a zelenina Pardubice, Jana Palacha 1451"
+              ></iframe>
+              <a
+                href="https://www.google.com/maps/place/Ovoce+a+Zelenina+-+Bart%C5%AFn%C4%9Bk/@50.0266397,15.7657112,667m/data=!3m2!1e3!4b1!4m6!3m5!1s0x470dcd3e4e9f7d7b:0xc7a788be14fceabe!8m2!3d50.0266398!4d15.7705821!16s%2Fg%2F11sf9skxr0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-wrap__link"
+              >
+                Otevřít v Mapách Google ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================
+         NEWSLETTER
+         ======================== -->
+    <section class="newsletter" id="newsletter" aria-label="Přihlášení k odběru novinek">
+      <div class="container">
+        <div class="newsletter__inner">
+          <div class="newsletter__icon" aria-hidden="true">📬</div>
+          <h2 class="newsletter__title">Buďte první, kdo ví,<br>co je čerstvé</h2>
+          <p class="newsletter__text">
+            Přihlaste se k odběru novinek a dostávejte tipy na sezónní produkty, nové recepty a informace o čerstvě naskladněném zboží přímo do e-mailu.
+          </p>
+
+          <form class="newsletter__form" id="newsletter-form" novalidate aria-label="Formulář pro přihlášení k newsletteru">
+            <div class="newsletter__form-row">
+              <label for="newsletter-email" class="sr-only">Vaše e-mailová adresa</label>
+              <input
+                type="email"
+                class="newsletter__input"
+                id="newsletter-email"
+                name="email"
+                placeholder="váš@email.cz"
+                autocomplete="email"
+                required
+                aria-required="true"
+                aria-describedby="newsletter-message"
+              >
+              <button type="submit" class="btn btn--primary">Přihlásit se</button>
+            </div>
+            <div class="newsletter__message" id="newsletter-message" role="alert" aria-live="polite"></div>
+            <p class="newsletter__disclaimer">Žádný spam. Odhlásit se lze kdykoliv jedním kliknutím.</p>
+          </form>
+
+          <div class="newsletter__perks" aria-label="Co dostanete v newsletteru">
+            <span class="newsletter__perk">🌱 Sezónní tipy</span>
+            <span class="newsletter__perk">🍳 Nové recepty</span>
+            <span class="newsletter__perk">🎁 Čerstvé novinky</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================
+       FOOTER
+       ======================== -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <a href="#" class="logo logo--footer" aria-label="Ovoce a Zelenina Pardubice – zpět nahoru">
+            <span class="logo__leaf" aria-hidden="true">🌿</span>
+            <span class="logo__text">
+              <span class="logo__name">Ovoce a Zelenina</span>
+              <span class="logo__location">Pardubice</span>
+            </span>
+          </a>
+          <p class="footer__tagline">Čerstvé ovoce a zelenina<br>přímo z okolí.</p>
+
+          <div class="footer__social" aria-label="Sociální sítě">
+            <a href="#" class="footer__social-link" aria-label="Náš Facebook" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Náš Instagram" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Náš TikTok" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.2 8.2 0 0 0 4.78 1.52V6.74a4.85 4.85 0 0 1-1-.05z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__nav" aria-label="Patičková navigace">
+          <h4 class="footer__nav-title">Navigace</h4>
+          <ul role="list">
+            <li><a href="#o-nas">O nás</a></li>
+            <li><a href="#nabidka">Naše nabídka</a></li>
+            <li><a href="#sezonni">Sezónní produkty</a></li>
+            <li><a href="#recepty">Recepty</a></li>
+            <li><a href="#firmy">Pro firmy</a></li>
+            <li><a href="#kontakt">Kde nás najdete</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__contact-info">
+          <h4 class="footer__nav-title">Kontakt</h4>
+          <address>
+            <p>Jana Palacha 1451<br>530 02 Pardubice</p>
+            <p><a href="tel:+420777123456">+420 777 123 456</a></p>
+            <p><a href="mailto:info@zelenykosik.cz">info@zelenykosik.cz</a></p>
+          </address>
+          <p class="footer__hours-mini">
+            <strong>Po–Pá:</strong> 8:00–17:30 &nbsp;|&nbsp; <strong>So:</strong> 8:00–11:00
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Ovoce a Zelenina Pardubice. Všechna práva vyhrazena.</p>
+        <div class="footer__legal-links">
+          <a href="#">Ochrana osobních údajů</a>
+          <a href="#">Obchodní podmínky</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
