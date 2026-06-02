@@ -7,6 +7,7 @@
  * 3. Scroll animace (Intersection Observer pro [data-animate])
  * 4. Zvýrazňování aktivního odkazu v navigaci
  * 5. Zavření mobilního menu po kliknutí na odkaz
+ * 6. Načtení externích embedů až po kliknutí
  */
 
 'use strict';
@@ -171,6 +172,46 @@ if (nav) {
 }
 
 /* ============================================================
+   6. EXTERNÍ EMBEDY – NAČÍST AŽ PO KLIKNUTÍ
+   ============================================================ */
+function initExternalEmbeds() {
+  const embedButtons = document.querySelectorAll('[data-load-embed]');
+
+  embedButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const frameWrap = button.closest('[data-embed-frame]');
+      const src = button.dataset.src;
+
+      if (!frameWrap || !src) {
+        return;
+      }
+
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = button.dataset.title || 'Externí obsah';
+      iframe.width = button.dataset.width || '100%';
+      iframe.height = button.dataset.height || '380';
+      iframe.loading = 'lazy';
+      iframe.style.border = '0';
+
+      if (button.dataset.allow) {
+        iframe.allow = button.dataset.allow;
+      }
+
+      if (button.dataset.allowfullscreen === 'true') {
+        iframe.allowFullscreen = true;
+      }
+
+      if (button.dataset.referrerpolicy) {
+        iframe.referrerPolicy = button.dataset.referrerpolicy;
+      }
+
+      frameWrap.replaceChildren(iframe);
+    });
+  });
+}
+
+/* ============================================================
    INICIALIZACE
    ============================================================ */
 
@@ -178,4 +219,5 @@ if (nav) {
 document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initActiveNavHighlight();
+  initExternalEmbeds();
 });

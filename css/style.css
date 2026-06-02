@@ -15,9 +15,10 @@
    11. Sekce "Aktuality"
    12. Sekce "Pro firmy"
    13. Sekce "Kontakt"
-   14. Footer
-   15. Animace (Animations)
-   16. Responzivní design (Media Queries)
+   14. Ochrana osobních údajů
+   15. Footer
+   16. Animace (Animations)
+   17. Responzivní design (Media Queries)
    ============================================================ */
 
 
@@ -33,6 +34,7 @@
 
   /* Barvy – Akcent žlutá */
   --color-accent:         #f0b429;
+  --color-accent-light:   #ffd76a;
   --color-accent-dark:    #d49a1a;
   --color-accent-pale:    #fef8e7;
 
@@ -51,8 +53,10 @@
 
   /* Barvy – Text */
   --color-text:           #2c2c2c;
+  --color-text-on-accent: #1f2c20;
   --color-text-light:     #585858;
   --color-text-muted:     #909090;
+  --color-footer:         #1a2e1d;
 
   /* Typografie */
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -87,9 +91,9 @@
 
   /* Border radius */
   --radius-sm:   8px;
-  --radius-md:   16px;
-  --radius-lg:   24px;
-  --radius-xl:   32px;
+  --radius-md:   8px;
+  --radius-lg:   8px;
+  --radius-xl:   8px;
   --radius-full: 9999px;
 
   /* Stíny */
@@ -195,9 +199,9 @@ h1, h2, h3, h4 {
 .section-label {
   display: inline-block;
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-body);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-primary);
   margin-bottom: var(--space-3);
@@ -210,9 +214,10 @@ h1, h2, h3, h4 {
 .section-title {
   font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.12;
   color: var(--color-text);
   margin-bottom: var(--space-4);
+  text-wrap: balance;
 }
 
 .section-title--light {
@@ -222,7 +227,7 @@ h1, h2, h3, h4 {
 .section-subtitle {
   font-size: var(--text-lg);
   color: var(--color-text-light);
-  max-width: 560px;
+  max-width: 620px;
   line-height: 1.65;
 }
 
@@ -358,14 +363,41 @@ h1, h2, h3, h4 {
 .logo {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-3);
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.logo__leaf {
-  font-size: 1.5rem;
-  line-height: 1;
+.logo__mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-pale);
+  border: 1px solid rgba(58, 125, 68, 0.18);
+  border-radius: var(--radius-sm);
+}
+
+.logo__mark svg {
+  width: 28px;
+  height: 28px;
+  overflow: visible;
+}
+
+.logo__mark-basket,
+.logo__mark-handle,
+.logo__mark-leaf {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo__mark-leaf {
+  fill: rgba(58, 125, 68, 0.18);
 }
 
 .logo__text {
@@ -380,7 +412,7 @@ h1, h2, h3, h4 {
   font-size: var(--text-lg);
   font-weight: 700;
   color: var(--color-primary-dark);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 1.1;
 }
 
@@ -398,6 +430,16 @@ h1, h2, h3, h4 {
 /* Logo ve footeru – světlé barvy */
 .logo--footer .logo__name {
   color: var(--color-white);
+}
+
+.logo--footer .logo__mark {
+  color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.logo--footer .logo__mark-leaf {
+  fill: rgba(240, 180, 41, 0.22);
 }
 
 .logo--footer .logo__location {
@@ -431,7 +473,7 @@ h1, h2, h3, h4 {
 }
 
 .nav__link--highlight {
-  color: #1f2c20;
+  color: var(--color-text-on-accent);
   background-color: var(--color-accent);
   border: 2px solid var(--color-accent);
   font-weight: 600;
@@ -439,9 +481,9 @@ h1, h2, h3, h4 {
 }
 
 .nav__link--highlight:hover {
-  background-color: #ffd76a;
-  border-color: #ffd76a;
-  color: #1f2c20;
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+  color: var(--color-text-on-accent);
   box-shadow: 0 6px 20px rgba(240, 180, 41, 0.28);
 }
 
@@ -452,7 +494,7 @@ h1, h2, h3, h4 {
 }
 
 .nav__link--highlight.is-active {
-  color: #1f2c20;
+  color: var(--color-text-on-accent);
 }
 
 /* Hamburger tlačítko (mobilní) */
@@ -536,7 +578,7 @@ h1, h2, h3, h4 {
 
 .hero__title-accent {
   font-style: italic;
-  color: #f5d77d;
+  color: var(--color-accent-light);
   display: block;
 }
 
@@ -558,14 +600,14 @@ h1, h2, h3, h4 {
 .hero__cta .btn--primary {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
-  color: #1f2c20;
+  color: var(--color-text-on-accent);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
 }
 
 .hero__cta .btn--primary:hover {
-  background-color: #ffd76a;
-  border-color: #ffd76a;
-  color: #1f2c20;
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+  color: var(--color-text-on-accent);
 }
 
 .hero__cta .btn--secondary {
@@ -576,7 +618,7 @@ h1, h2, h3, h4 {
 }
 
 .hero__cta .btn--secondary:hover {
-  color: #1f2c20;
+  color: var(--color-text-on-accent);
   border-color: var(--color-white);
   background-color: var(--color-white);
 }
@@ -904,13 +946,13 @@ h1, h2, h3, h4 {
 
 .offer-card--cta .btn--primary {
   background: var(--color-accent);
-  color: #1f2c20;
+  color: var(--color-text-on-accent);
   border-color: var(--color-accent);
 }
 
 .offer-card--cta .btn--primary:hover {
-  background: #ffd76a;
-  border-color: #ffd76a;
+  background: var(--color-accent-light);
+  border-color: var(--color-accent-light);
   box-shadow: 0 4px 16px rgba(240, 180, 41, 0.4);
 }
 
@@ -955,6 +997,60 @@ h1, h2, h3, h4 {
   max-width: 500px;
   border-radius: var(--radius-sm);
   background: var(--color-white);
+}
+
+.privacy-embed__frame {
+  width: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  background:
+    linear-gradient(135deg, rgba(58, 125, 68, 0.08), rgba(240, 180, 41, 0.08)),
+    var(--color-white);
+  border-radius: var(--radius-sm);
+}
+
+.privacy-embed__frame--map {
+  min-height: 380px;
+  border-radius: 0;
+}
+
+.privacy-embed__content {
+  max-width: 380px;
+  text-align: center;
+}
+
+.privacy-embed__content h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.privacy-embed__content p {
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-5);
+}
+
+.privacy-embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: var(--color-white);
+}
+
+.facebook-news__embed.privacy-embed iframe {
+  max-width: 500px;
+  border-radius: var(--radius-sm);
+}
+
+.map-wrap iframe {
+  min-height: 380px;
 }
 
 
@@ -1126,7 +1222,7 @@ h1, h2, h3, h4 {
   padding: var(--space-4) var(--space-5);
   background: var(--color-accent-pale);
   border-radius: var(--radius-md);
-  border: 1px solid #f5e29a;
+  border: 1px solid rgba(240, 180, 41, 0.35);
 }
 
 .contact__note span {
@@ -1158,12 +1254,6 @@ h1, h2, h3, h4 {
   flex-direction: column;
 }
 
-.map-wrap iframe {
-  display: block;
-  width: 100%;
-  min-height: 380px;
-}
-
 .map-wrap__link {
   display: block;
   text-align: center;
@@ -1182,10 +1272,81 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   14. FOOTER
+   14. OCHRANA OSOBNÍCH ÚDAJŮ
+   ============================================================ */
+.legal {
+  padding: var(--space-24) 0;
+  background-color: var(--color-bg);
+}
+
+.legal--page {
+  padding-top: calc(var(--header-height) + var(--space-16));
+  min-height: 100svh;
+}
+
+.legal__inner {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.legal__inner .section-title {
+  margin-bottom: var(--space-8);
+}
+
+.legal__intro {
+  max-width: 720px;
+  font-size: var(--text-lg);
+  line-height: 1.65;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-8);
+}
+
+.legal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.legal__block {
+  padding: var(--space-6);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+}
+
+.legal__block h2,
+.legal__block h3 {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.legal__block p {
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+.legal__block p + p {
+  margin-top: var(--space-3);
+}
+
+.legal__block a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.legal__back {
+  margin-top: var(--space-8);
+}
+
+/* ============================================================
+   15. FOOTER
    ============================================================ */
 .footer {
-  background-color: #1a2e1d;
+  background-color: var(--color-footer);
   color: rgba(255, 255, 255, 0.7);
   padding-top: var(--space-16);
 }
@@ -1299,7 +1460,7 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   15. ANIMACE
+   16. ANIMACE
    ============================================================ */
 
 /* Scroll reveal – výchozí stav (přidané pomocí JS) */
@@ -1325,7 +1486,7 @@ h1, h2, h3, h4 {
 [data-animate]:nth-child(6) { transition-delay: 0.40s; }
 
 /* ============================================================
-   16. RESPONZIVNÍ DESIGN – MEDIA QUERIES
+   17. RESPONZIVNÍ DESIGN – MEDIA QUERIES
    ============================================================ */
 
 /* Tablet – < 1024px */
@@ -1375,6 +1536,10 @@ h1, h2, h3, h4 {
   .contact__inner {
     grid-template-columns: 1fr;
     gap: var(--space-8);
+  }
+
+  .legal__grid {
+    grid-template-columns: 1fr;
   }
 
   .footer__top {
@@ -1512,6 +1677,15 @@ h1, h2, h3, h4 {
 
   .facebook-news__embed iframe {
     height: 500px;
+  }
+
+  .privacy-embed__frame {
+    min-height: 500px;
+    padding: var(--space-6);
+  }
+
+  .privacy-embed__frame--map {
+    min-height: 360px;
   }
 
   .business__benefits {
