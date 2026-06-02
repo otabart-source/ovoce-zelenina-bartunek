@@ -6,8 +6,7 @@
  * 2. Sticky header (stín a efekt při scrollu)
  * 3. Scroll animace (Intersection Observer pro [data-animate])
  * 4. Zvýrazňování aktivního odkazu v navigaci
- * 5. Newsletter formulář – validace a simulace odeslání
- * 6. Zavření mobilního menu po kliknutí na odkaz
+ * 5. Zavření mobilního menu po kliknutí na odkaz
  */
 
 'use strict';
@@ -89,7 +88,17 @@ function initScrollAnimations() {
     }
   );
 
-  animatableElements.forEach(el => observer.observe(el));
+  animatableElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const isInitiallyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isInitiallyVisible) {
+      el.classList.add('is-visible');
+      return;
+    }
+
+    observer.observe(el);
+  });
 }
 
 /* ============================================================
@@ -141,110 +150,7 @@ function initActiveNavHighlight() {
 }
 
 /* ============================================================
-   5. NEWSLETTER FORMULÁŘ – VALIDACE A SIMULACE ODESLÁNÍ
-   ============================================================ */
-
-const newsletterForm    = document.getElementById('newsletter-form');
-const newsletterEmail   = document.getElementById('newsletter-email');
-const newsletterMessage = document.getElementById('newsletter-message');
-
-/**
- * Validuje formát e-mailové adresy.
- * @param {string} email
- * @returns {boolean}
- */
-function isValidEmail(email) {
-  // RFC 5322 zjednodušená regex validace
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
-}
-
-/**
- * Zobrazí zprávu pod formulářem.
- * @param {string} text    – text zprávy
- * @param {'success'|'error'} type – typ zprávy
- */
-function showNewsletterMessage(text, type) {
-  newsletterMessage.textContent = text;
-  newsletterMessage.className   = `newsletter__message is-${type}`;
-}
-
-/**
- * Simuluje asynchronní odeslání formuláře (bez backendu).
- * Zobrazí loading stav, poté potvrzovací zprávu.
- * @param {string} email
- * @returns {Promise<void>}
- */
-function simulateSubmit(email) {
-  return new Promise((resolve) => {
-    // Simulace latence serveru (600–1200 ms)
-    setTimeout(resolve, 600 + Math.random() * 600);
-  });
-}
-
-if (newsletterForm) {
-  newsletterForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const email     = newsletterEmail.value;
-    const submitBtn = newsletterForm.querySelector('button[type="submit"]');
-
-    // Vyčistit předchozí zprávy a chybové styly
-    showNewsletterMessage('', '');
-    newsletterEmail.classList.remove('is-error');
-
-    // --- Validace ---
-    if (!email.trim()) {
-      showNewsletterMessage('Zadejte prosím svůj e-mail.', 'error');
-      newsletterEmail.classList.add('is-error');
-      newsletterEmail.focus();
-      return;
-    }
-
-    if (!isValidEmail(email)) {
-      showNewsletterMessage('Zkontrolujte prosím formát e-mailové adresy.', 'error');
-      newsletterEmail.classList.add('is-error');
-      newsletterEmail.focus();
-      return;
-    }
-
-    // --- Odeslání ---
-    submitBtn.disabled      = true;
-    submitBtn.textContent   = 'Odesílám…';
-    const originalBtnText   = 'Přihlásit se';
-
-    try {
-      await simulateSubmit(email);
-
-      // Úspěch
-      showNewsletterMessage(
-        `✓ Super! Na adresu ${email} vám budou chodit novinky ze Zeleného košíku.`,
-        'success'
-      );
-      newsletterForm.reset();
-
-    } catch {
-      // Chyba (v simulaci nenastane, ale připraveno pro real backend)
-      showNewsletterMessage(
-        'Něco se nepovedlo. Zkuste to prosím za chvíli.',
-        'error'
-      );
-    } finally {
-      submitBtn.disabled    = false;
-      submitBtn.textContent = originalBtnText;
-    }
-  });
-
-  // Vymazat chybový stav při psaní
-  newsletterEmail.addEventListener('input', () => {
-    newsletterEmail.classList.remove('is-error');
-    if (newsletterMessage.classList.contains('is-error')) {
-      showNewsletterMessage('', '');
-    }
-  });
-}
-
-/* ============================================================
-   6. MOBILNÍ MENU – ZAVŘÍT PO KLIKNUTÍ NA ODKAZ
+   5. MOBILNÍ MENU – ZAVŘÍT PO KLIKNUTÍ NA ODKAZ
    ============================================================ */
 
 /**
