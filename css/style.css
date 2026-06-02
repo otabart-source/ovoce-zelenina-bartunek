@@ -9,16 +9,15 @@
    05. Tlačítka (Buttons)
    06. Header & Navigace
    07. Hero sekce
-   08. Sekce "O nás"
-   09. Sekce "Nabídka"
-   10. Sekce "Sezónní produkty"
-   11. Sekce "Recepty"
+   08. Sekce partnerů
+   09. Sekce "O nás"
+   10. Sekce "Nabídka"
+   11. Sekce "Aktuality"
    12. Sekce "Pro firmy"
    13. Sekce "Kontakt"
-   14. Newsletter
-   15. Footer
-   16. Animace (Animations)
-   17. Responzivní design (Media Queries)
+   14. Footer
+   15. Animace (Animations)
+   16. Responzivní design (Media Queries)
    ============================================================ */
 
 
@@ -54,10 +53,6 @@
   --color-text:           #2c2c2c;
   --color-text-light:     #585858;
   --color-text-muted:     #909090;
-
-  /* Barvy – Sezónní sekce (tmavé pozadí) */
-  --color-seasonal-bg:    #2d6235;
-  --color-seasonal-bg-2:  #234d29;
 
   /* Typografie */
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -631,7 +626,7 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   08a. PARTNEŘI – SCROLLING LIŠTA
+   08. PARTNEŘI – SCROLLING LIŠTA
    ============================================================ */
 .partners {
   background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
@@ -707,7 +702,7 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   08. SEKCE "O NÁS"
+   09. SEKCE "O NÁS"
    ============================================================ */
 .about {
   padding: var(--space-24) 0;
@@ -794,7 +789,7 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   09. SEKCE "NABÍDKA"
+   10. SEKCE "NABÍDKA"
    ============================================================ */
 .offer {
   padding: var(--space-24) 0;
@@ -921,155 +916,50 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   10. SEKCE "SEZÓNNÍ PRODUKTY"
+   11. SEKCE "AKTUALITY"
    ============================================================ */
-.seasonal {
+.facebook-news {
   padding: var(--space-24) 0;
-  background: linear-gradient(160deg,
-    var(--color-seasonal-bg) 0%,
-    var(--color-seasonal-bg-2) 100%
-  );
-  position: relative;
-  overflow: hidden;
+  background-color: var(--color-white);
 }
 
-/* Dekorativní textury v pozadí */
-.seasonal::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.03);
-  pointer-events: none;
-}
-
-.seasonal::after {
-  content: '';
-  position: absolute;
-  bottom: -80px;
-  left: -40px;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.03);
-  pointer-events: none;
-}
-
-.seasonal__grid {
+.facebook-news__inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
-}
-
-.product-card {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition:
-    transform var(--transition-base),
-    background-color var(--transition-base),
-    box-shadow var(--transition-base);
-}
-
-.product-card:hover {
-  background: rgba(255, 255, 255, 0.13);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-}
-
-/* Horní vizuální část produktové karty */
-.product-card__img {
-  height: 120px;
-  display: flex;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-16);
   align-items: center;
+}
+
+.facebook-news__content {
+  max-width: 520px;
+}
+
+.facebook-news__content .section-subtitle {
+  margin-bottom: var(--space-8);
+}
+
+.facebook-news__embed {
+  display: flex;
   justify-content: center;
-  position: relative;
+  padding: var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  min-height: 590px;
 }
 
-.product-card__img--strawberry { background: linear-gradient(135deg, #ff6b6b33, #ff8e5333); }
-.product-card__img--asparagus  { background: linear-gradient(135deg, #6bcb7733, #4a9e5033); }
-.product-card__img--radish     { background: linear-gradient(135deg, #ff8fb133, #ff6b9d33); }
-.product-card__img--spinach    { background: linear-gradient(135deg, #52d66c33, #2aab4433); }
-.product-card__img--rhubarb    { background: linear-gradient(135deg, #c0445033, #8b000033); }
-.product-card__img--beargarlic { background: linear-gradient(135deg, #e8d44d33, #c8b53033); }
-
-.product-card__emoji {
-  font-size: 3rem;
-  line-height: 1;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-  transition: transform var(--transition-base);
-}
-
-.product-card:hover .product-card__emoji {
-  transform: scale(1.2);
-}
-
-/* Badge štítky */
-.product-card__badge {
-  position: absolute;
-  top: var(--space-3);
-  right: var(--space-3);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.product-card__badge--hot    { background: var(--color-accent);    color: var(--color-text); }
-.product-card__badge--new    { background: #4fc3f7;                 color: #0d47a1; }
-.product-card__badge--season { background: rgba(255,255,255,0.2);  color: var(--color-white); border: 1px solid rgba(255,255,255,0.4); }
-
-/* Tělo produktové karty */
-.product-card__body {
-  padding: var(--space-4) var(--space-5) var(--space-5);
-}
-
-.product-card__name {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  font-weight: 700;
-  color: var(--color-white);
-  margin-bottom: var(--space-2);
-}
-
-.product-card__desc {
-  font-size: var(--text-sm);
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.55;
-  margin-bottom: var(--space-4);
-}
-
-.product-card__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--space-3);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  gap: var(--space-2);
-}
-
-.product-card__price {
-  font-size: var(--text-base);
-  font-weight: 700;
-  color: var(--color-accent);
-}
-
-.product-card__season-tag {
-  font-size: var(--text-xs);
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+.facebook-news__embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
 }
 
 
 /* ============================================================
-   11. SEKCE "PRO FIRMY"
+   12. SEKCE "PRO FIRMY"
    ============================================================ */
 .business {
   padding: var(--space-24) 0;
@@ -1077,10 +967,12 @@ h1, h2, h3, h4 {
 }
 
 .business__inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-16);
-  align-items: center;
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+.business__content {
+  text-align: center;
 }
 
 .business__text {
@@ -1091,10 +983,11 @@ h1, h2, h3, h4 {
 }
 
 .business__benefits {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-5);
   margin-bottom: var(--space-8);
+  text-align: left;
 }
 
 .business__benefit {
@@ -1104,7 +997,9 @@ h1, h2, h3, h4 {
 }
 
 .business__benefit-icon {
-  font-size: 1.75rem;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
   line-height: 1;
   flex-shrink: 0;
   width: 52px;
@@ -1112,8 +1007,9 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--color-primary-dark);
   background: var(--color-white);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border-light);
 }
@@ -1131,57 +1027,6 @@ h1, h2, h3, h4 {
   color: var(--color-text-light);
   line-height: 1.55;
 }
-
-/* Vizuální pravý sloupec */
-.business__visual {
-  display: flex;
-  justify-content: center;
-}
-
-.business__visual-inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-  width: 100%;
-  max-width: 280px;
-}
-
-.business__stat-card {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6) var(--space-8);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--color-border-light);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  transition: transform var(--transition-base);
-}
-
-.business__stat-card:hover {
-  transform: translateY(-4px);
-}
-
-.business__stat-icon {
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: var(--space-2);
-}
-
-.business__stat-card strong {
-  font-family: var(--font-heading);
-  font-size: var(--text-3xl);
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1;
-}
-
-.business__stat-card span {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-
 
 /* ============================================================
    13. SEKCE "KONTAKT"
@@ -1336,45 +1181,6 @@ h1, h2, h3, h4 {
   color: var(--color-primary-dark);
 }
 
-/* Původní placeholder (zachován pro případ použití) */
-.map-placeholder {
-  background: linear-gradient(135deg, #f0f7f1 0%, #e3f0e5 100%);
-  border: 2px dashed var(--color-border);
-  border-radius: var(--radius-lg);
-  min-height: 380px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-10);
-}
-
-.map-placeholder__content {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-.map-placeholder__icon {
-  font-size: 3.5rem;
-  line-height: 1;
-  margin-bottom: var(--space-2);
-}
-
-.map-placeholder__address {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--color-text);
-  line-height: 1.4;
-}
-
-.map-placeholder__note {
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-
 /* ============================================================
    14. FOOTER
    ============================================================ */
@@ -1492,24 +1298,8 @@ h1, h2, h3, h4 {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.footer__legal-links {
-  display: flex;
-  gap: var(--space-5);
-}
-
-.footer__legal-links a {
-  font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.3);
-  transition: color var(--transition-fast);
-}
-
-.footer__legal-links a:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-
 /* ============================================================
-   16. ANIMACE
+   15. ANIMACE
    ============================================================ */
 
 /* Scroll reveal – výchozí stav (přidané pomocí JS) */
@@ -1535,7 +1325,7 @@ h1, h2, h3, h4 {
 [data-animate]:nth-child(6) { transition-delay: 0.40s; }
 
 /* ============================================================
-   17. RESPONZIVNÍ DESIGN – MEDIA QUERIES
+   16. RESPONZIVNÍ DESIGN – MEDIA QUERIES
    ============================================================ */
 
 /* Tablet – < 1024px */
@@ -1567,26 +1357,19 @@ h1, h2, h3, h4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .seasonal__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .business__inner {
+  .facebook-news__inner {
     grid-template-columns: 1fr;
     gap: var(--space-10);
   }
 
-  .business__visual {
-    order: -1;
+  .facebook-news__content {
+    max-width: 680px;
+    text-align: center;
+    margin-inline: auto;
   }
 
-  .business__visual-inner {
-    flex-direction: row;
-    max-width: 100%;
-  }
-
-  .business__stat-card {
-    flex: 1;
+  .facebook-news__content .section-subtitle {
+    margin-inline: auto;
   }
 
   .contact__inner {
@@ -1722,16 +1505,17 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr;
   }
 
-  /* Sezónní */
-  .seasonal__grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
+  .facebook-news__embed {
+    padding: var(--space-2);
+    min-height: 520px;
   }
 
-  /* Pro firmy */
-  .business__visual-inner {
-    flex-direction: column;
-    align-items: stretch;
+  .facebook-news__embed iframe {
+    height: 500px;
+  }
+
+  .business__benefits {
+    grid-template-columns: 1fr;
   }
 
   /* Footer */

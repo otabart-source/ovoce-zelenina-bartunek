@@ -17,7 +17,7 @@
        ======================== -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#" class="logo" aria-label="Ovoce a Zelenina Pardubice – domovská stránka">
+      <a href="#hero" class="logo" aria-label="Ovoce a Zelenina Pardubice – domovská stránka">
         <span class="logo__leaf" aria-hidden="true">🌿</span>
         <span class="logo__text">
           <span class="logo__name">Ovoce a Zelenina</span>
@@ -29,6 +29,7 @@
         <ul class="nav__list" role="list">
           <li><a href="#o-nas"    class="nav__link">O nás</a></li>
           <li><a href="#nabidka"  class="nav__link">Nabídka</a></li>
+          <li><a href="#aktuality" class="nav__link">Aktuality</a></li>
           <li><a href="#firmy"    class="nav__link">Pro firmy</a></li>
           <li><a href="#kontakt"  class="nav__link nav__link--highlight">Kde nás najdete</a></li>
         </ul>
@@ -335,7 +336,39 @@
       </div>
     </section>
 
- 
+    <!-- ========================
+         AKTUALITY Z FACEBOOKU
+         ======================== -->
+    <section class="facebook-news" id="aktuality">
+      <div class="container">
+        <div class="facebook-news__inner">
+          <div class="facebook-news__content" data-animate>
+            <div class="section-label">Aktuality</div>
+            <h2 class="section-title">Co je právě<br>nového v prodejně</h2>
+            <p class="section-subtitle">
+              Denní nabídku, fotky čerstvě naskladněného zboží a rychlé novinky najdete nejčastěji na našem Facebooku.
+            </p>
+            <a href="https://www.facebook.com/ovocezeleninapardubice" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+              Otevřít Facebook
+            </a>
+          </div>
+
+          <div class="facebook-news__embed" data-animate>
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fovocezeleninapardubice&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"
+              width="500"
+              height="560"
+              style="border:none;overflow:hidden"
+              scrolling="no"
+              frameborder="0"
+              allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              title="Aktuality z Facebook stránky Ovoce a Zelenina Pardubice"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ========================
          PRO FIRMY – B2B
@@ -353,28 +386,28 @@
 
             <ul class="business__benefits" role="list">
               <li class="business__benefit">
-                <span class="business__benefit-icon" aria-hidden="true">📅</span>
+                <span class="business__benefit-icon" aria-hidden="true">01</span>
                 <div>
                   <strong>Pravidelné dodávky</strong>
                   <p>Denní, týdenní nebo dle domluvy. Spolehlivě a vždy čerstvé.</p>
                 </div>
               </li>
               <li class="business__benefit">
-                <span class="business__benefit-icon" aria-hidden="true">✍️</span>
+                <span class="business__benefit-icon" aria-hidden="true">02</span>
                 <div>
                   <strong>Individuální domluva</strong>
                   <p>Sestavíme nabídku přesně podle vašich potřeb a požadovaného množství.</p>
                 </div>
               </li>
               <li class="business__benefit">
-                <span class="business__benefit-icon" aria-hidden="true">🚚</span>
+                <span class="business__benefit-icon" aria-hidden="true">03</span>
                 <div>
                   <strong>Možnost rozvozu</strong>
                   <p>V rámci okolí doručíme přímo k vám. Žádné starosti s nákupem.</p>
                 </div>
               </li>
               <li class="business__benefit">
-                <span class="business__benefit-icon" aria-hidden="true">🧾</span>
+                <span class="business__benefit-icon" aria-hidden="true">04</span>
                 <div>
                   <strong>Faktury a doklady</strong>
                   <p>Vše doložíme potřebnými doklady pro vaše účetnictví.</p>
@@ -382,22 +415,7 @@
               </li>
             </ul>
 
-            <a href="#kontakt" class="btn btn--primary">Napište nám</a>
-          </div>
-
-          <div class="business__visual" data-animate aria-hidden="true">
-            <div class="business__visual-inner">
-              <div class="business__stat-card">
-                <span class="business__stat-icon">🏪</span>
-                <strong>30+</strong>
-                <span>spokojených firemních klientů</span>
-              </div>
-              <div class="business__stat-card">
-                <span class="business__stat-icon">📦</span>
-                <strong>denně</strong>
-                <span>zásobujeme provozovny</span>
-              </div>
-            </div>
+            <a href="mailto:info@zelenykosik.cz?subject=Domluva%20firemn%C3%ADho%20odb%C4%9Bru" class="btn btn--primary">Domluvit odběr</a>
           </div>
 
         </div>
@@ -504,7 +522,7 @@
       <div class="footer__top">
 
         <div class="footer__brand">
-          <a href="#" class="logo logo--footer" aria-label="Ovoce a Zelenina Pardubice – zpět nahoru">
+          <a href="#hero" class="logo logo--footer" aria-label="Ovoce a Zelenina Pardubice – zpět nahoru">
             <span class="logo__leaf" aria-hidden="true">🌿</span>
             <span class="logo__text">
               <span class="logo__name">Ovoce a Zelenina</span>
@@ -514,14 +532,8 @@
           <p class="footer__tagline">Čerstvé ovoce a zelenina<br>přímo z okolí.</p>
 
           <div class="footer__social" aria-label="Sociální sítě">
-            <a href="#" class="footer__social-link" aria-label="Náš Facebook" rel="noopener">
+            <a href="https://www.facebook.com/ovocezeleninapardubice" class="footer__social-link" aria-label="Náš Facebook" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="Náš Instagram" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="Náš TikTok" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.2 8.2 0 0 0 4.78 1.52V6.74a4.85 4.85 0 0 1-1-.05z"/></svg>
             </a>
           </div>
         </div>
@@ -531,6 +543,7 @@
           <ul role="list">
             <li><a href="#o-nas">O nás</a></li>
             <li><a href="#nabidka">Naše nabídka</a></li>
+            <li><a href="#aktuality">Aktuality</a></li>
             <li><a href="#firmy">Pro firmy</a></li>
             <li><a href="#kontakt">Kde nás najdete</a></li>
           </ul>
@@ -552,10 +565,6 @@
 
       <div class="footer__bottom">
         <p class="footer__copy">&copy; 2026 Ovoce a Zelenina Pardubice. Všechna práva vyhrazena.</p>
-        <div class="footer__legal-links">
-          <a href="#">Ochrana osobních údajů</a>
-          <a href="#">Obchodní podmínky</a>
-        </div>
       </div>
     </div>
   </footer>
