@@ -1055,35 +1055,53 @@ h1, h2, h3, h4 {
   background-color: var(--color-white);
 }
 
+.contact__header {
+  text-align: left;
+  align-items: flex-start;
+  margin-bottom: var(--space-10);
+}
+
+.contact__header .section-subtitle {
+  margin-inline: 0;
+}
+
 .contact__inner {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: var(--space-12);
-  align-items: start;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: var(--space-10);
+  align-items: stretch;
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border-light);
 }
 
 .contact__info {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: 0;
 }
 
 .contact__block {
-  padding: var(--space-5) var(--space-6);
-  background: var(--color-bg);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border-light);
+  padding: var(--space-5) 0;
+  background: transparent;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.contact__block:first-child {
+  padding-top: 0;
+}
+
+.contact__block:last-of-type {
+  border-bottom: none;
 }
 
 .contact__block-title {
   font-family: var(--font-body);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--color-text);
-  margin-bottom: var(--space-3);
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
+  margin-bottom: var(--space-2);
 }
 
 .contact__address {
@@ -1139,42 +1157,31 @@ h1, h2, h3, h4 {
 
 /* Poznámka o parkování */
 .contact__note {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-5);
-  background: var(--color-accent-pale);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(240, 180, 41, 0.35);
-}
-
-.contact__note span {
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  margin-top: 2px;
+  padding-top: var(--space-5);
 }
 
 .contact__note p {
   font-size: var(--text-sm);
-  color: var(--color-text-light);
-  line-height: 1.55;
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 /* Placeholder pro mapu */
 .contact__map {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
 }
 
 /* Skutečná mapa */
 .map-wrap {
-  border-radius: var(--radius-lg);
+  height: 100%;
+  min-height: 430px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border-light);
   display: flex;
   flex-direction: column;
+  background: var(--color-bg);
 }
 
 .map-wrap__link {
