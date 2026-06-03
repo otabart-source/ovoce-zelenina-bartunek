@@ -9,16 +9,15 @@
    05. Tlačítka (Buttons)
    06. Header & Navigace
    07. Hero sekce
-   08. Sekce partnerů
-   09. Sekce "O nás"
-   10. Sekce "Nabídka"
-   11. Sekce "Aktuality"
-   12. Sekce "Pro firmy"
-   13. Sekce "Kontakt"
-   14. Ochrana osobních údajů
-   15. Footer
-   16. Animace (Animations)
-   17. Responzivní design (Media Queries)
+   08. Sekce "O nás"
+   09. Sekce "Nabídka"
+   10. Sekce "Aktuality"
+   11. Sekce "Pro firmy"
+   12. Sekce "Kontakt"
+   13. Ochrana osobních údajů
+   14. Footer
+   15. Animace (Animations)
+   16. Responzivní design (Media Queries)
    ============================================================ */
 
 
@@ -668,83 +667,7 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   08. PARTNEŘI – SCROLLING LIŠTA
-   ============================================================ */
-.partners {
-  background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  padding: var(--space-5) 0;
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-  overflow: hidden;
-  position: relative;
-}
-
-/* Svislý oddělovač + popisek vlevo */
-.partners__label {
-  flex-shrink: 0;
-  padding-left: var(--container-pad);
-  padding-right: var(--space-8);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: none;
-  color: rgba(255, 255, 255, 0.95);
-  white-space: nowrap;
-  border-right: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-/* Fade efekt na pravém kraji log, bez překrytí popisku vlevo */
-.partners::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 120px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.partners::after {
-  right: 0;
-  background: linear-gradient(to left, var(--color-primary), transparent);
-}
-
-/* Scrollovací kontejner */
-.partners__marquee {
-  overflow: hidden;
-  flex: 1;
-  min-width: 0;
-}
-
-.partners__track {
-  display: flex;
-  align-items: center;
-  gap: var(--space-12);
-  width: max-content;
-  animation: marquee-scroll 18s linear infinite;
-}
-
-.partner-logo {
-  display: flex;
-  align-items: center;
-  opacity: 0.6;
-  transition: opacity var(--transition-fast);
-  flex-shrink: 0;
-}
-
-.partner-logo:hover {
-  opacity: 1;
-}
-
-@keyframes marquee-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-
-/* ============================================================
-   09. SEKCE "O NÁS"
+   08. SEKCE "O NÁS"
    ============================================================ */
 .about {
   padding: var(--space-24) 0;
@@ -831,7 +754,7 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   10. SEKCE "NABÍDKA"
+   09. SEKCE "NABÍDKA"
    ============================================================ */
 .offer {
   padding: var(--space-24) 0;
@@ -958,7 +881,7 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   11. SEKCE "AKTUALITY"
+   10. SEKCE "AKTUALITY"
    ============================================================ */
 .facebook-news {
   padding: var(--space-24) 0;
@@ -1055,7 +978,7 @@ h1, h2, h3, h4 {
 
 
 /* ============================================================
-   12. SEKCE "PRO FIRMY"
+   11. SEKCE "PRO FIRMY"
    ============================================================ */
 .business {
   padding: var(--space-24) 0;
@@ -1125,7 +1048,7 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   13. SEKCE "KONTAKT"
+   12. SEKCE "KONTAKT"
    ============================================================ */
 .contact {
   padding: var(--space-24) 0;
@@ -1272,7 +1195,7 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   14. OCHRANA OSOBNÍCH ÚDAJŮ
+   13. OCHRANA OSOBNÍCH ÚDAJŮ
    ============================================================ */
 .legal {
   padding: var(--space-24) 0;
@@ -1343,7 +1266,7 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   15. FOOTER
+   14. FOOTER
    ============================================================ */
 .footer {
   background-color: var(--color-footer);
@@ -1460,7 +1383,7 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   16. ANIMACE
+   15. ANIMACE
    ============================================================ */
 
 /* Scroll reveal – výchozí stav (přidané pomocí JS) */
@@ -1486,7 +1409,7 @@ h1, h2, h3, h4 {
 [data-animate]:nth-child(6) { transition-delay: 0.40s; }
 
 /* ============================================================
-   17. RESPONZIVNÍ DESIGN – MEDIA QUERIES
+   16. RESPONZIVNÍ DESIGN – MEDIA QUERIES
    ============================================================ */
 
 /* Tablet – < 1024px */
@@ -1552,10 +1475,8 @@ h1, h2, h3, h4 {
   }
 }
 
-/* Mobilní zařízení – < 768px */
-@media (max-width: 768px) {
-
-  /* Navigace – mobilní hamburger */
+/* Navigace – přepnout dřív, než se odkazy začnou lámat */
+@media (max-width: 1120px) {
   .hamburger {
     display: flex;
   }
@@ -1596,6 +1517,10 @@ h1, h2, h3, h4 {
     padding: var(--space-3) var(--space-4);
     border-radius: var(--radius-sm);
   }
+}
+
+/* Mobilní zařízení – < 768px */
+@media (max-width: 768px) {
 
   /* Hero */
   .hero {
@@ -1632,37 +1557,6 @@ h1, h2, h3, h4 {
     width: 100%;
     justify-content: center;
     max-width: 320px;
-  }
-
-  /* Partneři */
-  .partners {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-4);
-    padding: var(--space-5) 0 var(--space-6);
-  }
-
-  .partners__label {
-    width: 100%;
-    padding: 0 var(--container-pad);
-    border-right: none;
-    text-align: center;
-    white-space: normal;
-  }
-
-  .partners__marquee {
-    width: 100%;
-  }
-
-  .partners__track {
-    gap: var(--space-8);
-  }
-
-  .partners::after {
-    top: auto;
-    bottom: 0;
-    height: 76px;
-    width: 72px;
   }
 
   /* Nabídka */

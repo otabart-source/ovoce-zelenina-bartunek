@@ -176,6 +176,7 @@ if (nav) {
    ============================================================ */
 function initExternalEmbeds() {
   const embedButtons = document.querySelectorAll('[data-load-embed]');
+  const allowedEmbedHosts = new Set(['www.facebook.com', 'maps.google.com']);
 
   embedButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -186,13 +187,25 @@ function initExternalEmbeds() {
         return;
       }
 
+      let embedUrl;
+      try {
+        embedUrl = new URL(src, window.location.href);
+      } catch {
+        return;
+      }
+
+      if (embedUrl.protocol !== 'https:' || !allowedEmbedHosts.has(embedUrl.hostname)) {
+        return;
+      }
+
       const iframe = document.createElement('iframe');
-      iframe.src = src;
+      iframe.src = embedUrl.href;
       iframe.title = button.dataset.title || 'Externí obsah';
       iframe.width = button.dataset.width || '100%';
       iframe.height = button.dataset.height || '380';
       iframe.loading = 'lazy';
       iframe.style.border = '0';
+      iframe.referrerPolicy = button.dataset.referrerpolicy || 'strict-origin-when-cross-origin';
 
       if (button.dataset.allow) {
         iframe.allow = button.dataset.allow;
@@ -200,10 +213,6 @@ function initExternalEmbeds() {
 
       if (button.dataset.allowfullscreen === 'true') {
         iframe.allowFullscreen = true;
-      }
-
-      if (button.dataset.referrerpolicy) {
-        iframe.referrerPolicy = button.dataset.referrerpolicy;
       }
 
       frameWrap.replaceChildren(iframe);
