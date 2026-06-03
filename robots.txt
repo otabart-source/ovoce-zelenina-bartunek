@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ovocezeleninapardubice.cz/sitemap.xml
+Sitemap: https://ovoce-zelenina-pardubice.cz/sitemap.xml
