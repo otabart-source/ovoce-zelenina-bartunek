@@ -1265,6 +1265,27 @@ h1, h2, h3, h4 {
   margin-top: var(--space-8);
 }
 
+.not-found {
+  min-height: calc(100svh - 330px);
+  display: flex;
+  align-items: center;
+}
+
+.not-found__inner {
+  text-align: center;
+}
+
+.not-found__inner .legal__intro {
+  margin-inline: auto;
+}
+
+.not-found__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
 /* ============================================================
    14. FOOTER
    ============================================================ */
